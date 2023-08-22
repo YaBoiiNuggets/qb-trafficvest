@@ -7,7 +7,7 @@
     ['vest4']                      = {['name'] = 'vest4',                        ['label'] = 'Traffic Vest',               ['weight'] = 5000,         ['type'] = 'item',         ['image'] = 'trafficvest.png',                   ['unique'] = false,         ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Traffic Vest for Vehicle Protection'},
 
 ````
-- Insert into qb-smallresource/clien/consumables.lua Line 50
+- Insert into qb-smallresource/client/consumables.lua Line 50
 ````
 RegisterNetEvent('consumables:client:UseVest', function()
     -- if GetPedArmour(PlayerPedId()) == 100 then QBCore.Functions.Notify(Lang:t('consumables.armor_full'), 'error') return end
