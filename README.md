@@ -1,4 +1,12 @@
 # Instructions
+- Insert into qb-core/shared/items.lua
+````
+    ['vest1']                      = {['name'] = 'vest1',                        ['label'] = 'LSPD Traffic Vest',               ['weight'] = 5000,         ['type'] = 'item',         ['image'] = 'trafficvest.png',                   ['unique'] = false,         ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Traffic Vest for Vehicle Protection'},
+    ['vest2']                      = {['name'] = 'vest2',                        ['label'] = 'BCSO Traffic Vest',               ['weight'] = 5000,         ['type'] = 'item',         ['image'] = 'trafficvest.png',                   ['unique'] = false,         ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Traffic Vest for Vehicle Protection'},
+    ['vest3']                      = {['name'] = 'vest3',                        ['label'] = 'SAST Traffic Vest',               ['weight'] = 5000,         ['type'] = 'item',         ['image'] = 'trafficvest.png',                   ['unique'] = false,         ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Traffic Vest for Vehicle Protection'},
+    ['vest4']                      = {['name'] = 'vest4',                        ['label'] = 'Traffic Vest',               ['weight'] = 5000,         ['type'] = 'item',         ['image'] = 'trafficvest.png',                   ['unique'] = false,         ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Traffic Vest for Vehicle Protection'},
+
+````
 - Insert into qb-smallresource/clien/consumables.lua Line 50
 ````
 RegisterNetEvent('consumables:client:UseVest', function()
@@ -131,5 +139,39 @@ RegisterNetEvent('consumables:client:UseVest4', function()
         TriggerServerEvent("consumables:server:useVest")
         -- SetPedArmour(ped, 100)
     end)
+end)
+````
+- Insert into qb-smallresources/server/consumables.lua
+````
+RegisterNetEvent('consumables:server:useVest1', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    if not Player then return end
+
+    Player.Functions.RemoveItem('vest1', 1)
+end)
+
+RegisterNetEvent('consumables:server:useVest2', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    if not Player then return end
+
+    Player.Functions.RemoveItem('vest2', 1)
+end)
+
+RegisterNetEvent('consumables:server:useVest3', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    if not Player then return end
+
+    Player.Functions.RemoveItem('vest3', 1)
+end)
+
+RegisterNetEvent('consumables:server:useVest4', function()
+    local Player = QBCore.Functions.GetPlayer(source)
+
+    if not Player then return end
+
+    Player.Functions.RemoveItem('vest4', 1)
 end)
 ````
