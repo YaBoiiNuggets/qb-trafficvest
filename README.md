@@ -1,4 +1,6 @@
 # Instructions
+- add trafficvest into your resources folder and ensure it
+- add image into your inventory images folder
 - Insert into qb-core/shared/items.lua
 ````
     ['vest1']                      = {['name'] = 'vest1',                        ['label'] = 'LSPD Traffic Vest',               ['weight'] = 5000,         ['type'] = 'item',         ['image'] = 'trafficvest.png',                   ['unique'] = false,         ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Traffic Vest for Vehicle Protection'},
