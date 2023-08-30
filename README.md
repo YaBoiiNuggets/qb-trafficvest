@@ -145,35 +145,17 @@ end)
 ````
 - Insert into qb-smallresources/server/consumables.lua
 ````
-RegisterNetEvent('consumables:server:useVest1', function()
-    local Player = QBCore.Functions.GetPlayer(source)
-
-    if not Player then return end
-
-    Player.Functions.RemoveItem('vest1', 1)
+QBCore.Functions.CreateUseableItem("vest1", function(source)
+    TriggerClientEvent("consumables:client:UseVest", source)
+end)
+QBCore.Functions.CreateUseableItem("vest2", function(source)
+    TriggerClientEvent("consumables:client:UseVest2", source)
+end)
+QBCore.Functions.CreateUseableItem("vest3", function(source)
+    TriggerClientEvent("consumables:client:UseVest3", source)
+end)
+QBCore.Functions.CreateUseableItem("vest4", function(source)
+    TriggerClientEvent("consumables:client:UseVest4", source)
 end)
 
-RegisterNetEvent('consumables:server:useVest2', function()
-    local Player = QBCore.Functions.GetPlayer(source)
-
-    if not Player then return end
-
-    Player.Functions.RemoveItem('vest2', 1)
-end)
-
-RegisterNetEvent('consumables:server:useVest3', function()
-    local Player = QBCore.Functions.GetPlayer(source)
-
-    if not Player then return end
-
-    Player.Functions.RemoveItem('vest3', 1)
-end)
-
-RegisterNetEvent('consumables:server:useVest4', function()
-    local Player = QBCore.Functions.GetPlayer(source)
-
-    if not Player then return end
-
-    Player.Functions.RemoveItem('vest4', 1)
-end)
 ````
